@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>{{ activeList?.name }}</h2>
+  <div class="todo-list-wrapper">
+    <div *ngFor="let todo of todos" class="todo-wrapper">
+      <input
+        class="custom-checkbox"
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="onCheck(todo)"
+      />
+      <span [class.completed-check]="todo.completed"> {{ todo.title }}</span>
+    </div>
+    <div class="delete-wrapper">
+      <app-button (click)="deleteCompleted()">Delete Completed</app-button>
+    </div>
+  </div>
+</div>

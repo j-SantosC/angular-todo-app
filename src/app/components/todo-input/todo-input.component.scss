@@ -1,0 +1,13 @@
+.container {
+  margin: 2rem 0;
+  .input-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  input {
+    border-radius: 10;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../styles/colors.scss";
+
+.container {
+  margin-top: 2rem;
+
+  .title {
+    color: $primary-color;
+  }
+  .list-wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}

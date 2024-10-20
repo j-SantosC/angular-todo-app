@@ -1,0 +1,24 @@
+@import "./styles/colors.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+  background-color: $background-color;
+}
+
+.container {
+  background-color: $background-color;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  width: 100%;
+  max-width: 1000px;
+
+  .main-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

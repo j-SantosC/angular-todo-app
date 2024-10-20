@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="title">Lists</h2>
+  <div *ngFor="let list of lists" class="list-wrapper">
+    <app-button (click)="onListClick(list.id)" class="list">
+      {{ list.name }}
+    </app-button>
+    <app-button [color]="'#9e3939'" (click)="onDelete(list)">X</app-button>
+  </div>
+  <app-todo-input (itemAdded)="onAddList($event)"></app-todo-input>
+</div>
