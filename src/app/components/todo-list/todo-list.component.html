@@ -6,7 +6,7 @@
         class="custom-checkbox"
         type="checkbox"
         [checked]="todo.completed"
-        (change)="onCheck(todo)"
+        (change)="toggleCompleted(todo)"
       />
       <span [class.completed-check]="todo.completed"> {{ todo.title }}</span>
     </div>

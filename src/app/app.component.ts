@@ -7,7 +7,7 @@ import { TodoService } from './services/todo.service';
 import { List, Todo } from './models/todo.models';
 import { ListsComponent } from './components/lists/lists.component';
 import { ListService } from './services/list.service';
-import { filter, switchMap } from 'rxjs';
+import { filter, of, switchMap } from 'rxjs';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   title = 'angular-todo-app';
 
   todos: Todo[] = [];
-  activeList!: List;
+  activeList: List | null = null;
 
   constructor(
     private todoService: TodoService,
@@ -37,9 +37,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.listService.activeList$
       .pipe(
-        filter((listId: number | null): listId is number => listId !== null), // Usar type predicate
-        switchMap((listId: number) => {
-          return this.listService.getList(listId);
+        switchMap((listId: string | null) => {
+          if (listId) {
+            return this.listService.getList(listId);
+          } else {
+            return of(null);
+          }
         })
       )
       .subscribe((list) => {
@@ -49,8 +52,8 @@ export class AppComponent implements OnInit {
 
   onAddTodo(todoTitle: string) {
     this.todoService
-      .addTodo(todoTitle, this.activeList?.id)
-      .pipe(switchMap(() => this.todoService.getTodos(this.activeList.id)))
+      .addTodo(todoTitle, this.activeList!.id)
+      .pipe(switchMap(() => this.todoService.getTodos(this.activeList!.id)))
       .subscribe((todos) => {
         this.todos = todos;
       });

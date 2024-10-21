@@ -2,10 +2,10 @@ export interface Todo {
   id: string;
   title: string;
   completed: boolean;
-  listId: number;
+  listId: string;
 }
 
 export interface List {
-  id: number;
+  id: string;
   name: string;
 }

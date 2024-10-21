@@ -17,7 +17,7 @@ import { combineLatest, filter, forkJoin, switchMap } from 'rxjs';
 export class TodoListComponent implements OnInit {
   @Input() todos: Todo[] = [];
 
-  activeList?: List;
+  activeList!: List | null;
 
   constructor(
     private todoService: TodoService,
@@ -27,9 +27,6 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
     this.listService.activeList$
       .pipe(
-        filter(
-          (listId): listId is number => listId !== null && listId !== undefined
-        ),
         switchMap((listId) =>
           combineLatest([
             this.todoService.getTodos(listId),
@@ -43,10 +40,13 @@ export class TodoListComponent implements OnInit {
       });
   }
 
-  onCheck(todo: Todo) {
-    todo.completed = !todo.completed;
-  }
+  toggleCompleted(todo: any): void {
+    const updatedTodo = { ...todo, completed: !todo.completed };
 
+    this.todoService.toggleCompleted(updatedTodo).subscribe((updated) => {
+      todo.completed = updatedTodo.completed;
+    });
+  }
   deleteCompleted() {
     const completedTodos = this.todos.filter(
       (todo) => todo?.completed && todo?.listId === this.activeList?.id

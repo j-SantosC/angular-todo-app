@@ -7,138 +7,98 @@
     {
       "id": "1729462580399",
       "name": "Working Out"
-    },
-    {
-      "id": "1729462598499",
-      "name": "Remember"
     }
   ],
   "todos": [
     {
-      "id": "1729458607409",
-      "title": "Soloprueba",
+      "id": "1729530577601",
+      "title": "fun1",
       "completed": false,
-      "listId": "1729455905282"
+      "listId": "1729530569152"
     },
     {
-      "id": "1729461740336",
-      "title": "Testing",
+      "id": "1729530579988",
+      "title": "fun2",
       "completed": false,
-      "listId": "1729221981342"
+      "listId": "1729530569152"
     },
     {
-      "id": "1729461742555",
-      "title": "Esto",
+      "id": "1729530638509",
+      "title": "poool",
       "completed": false,
-      "listId": "1729221981342"
+      "listId": "1729530628488"
     },
     {
-      "id": "1729461745139",
-      "title": "Funciona",
+      "id": "1729530639475",
+      "title": "popo",
       "completed": false,
-      "listId": "1729221981342"
+      "listId": "1729530628488"
     },
     {
-      "id": "1729461747572",
-      "title": "Yeeepale",
+      "id": "1729530640710",
+      "title": "polo",
       "completed": false,
-      "listId": "1729221981342"
+      "listId": "1729530628488"
     },
     {
-      "id": "1729462304304",
-      "title": "Test test",
+      "id": "1729531109476",
+      "title": "puerro",
       "completed": false,
-      "listId": "1729462297704"
+      "listId": "1729462559143"
     },
     {
-      "id": "1729462311322",
-      "title": "pickleball",
+      "id": "1729531110860",
+      "title": "apio",
       "completed": false,
-      "listId": "1729462297704"
+      "listId": "1729462559143"
     },
     {
-      "id": "1729462562762",
-      "title": "Tomatos",
-      "completed": false,
-      "listId": "1729177783808"
+      "id": "1729531112926",
+      "title": "lentejas",
+      "completed": true,
+      "listId": "1729462559143"
     },
     {
-      "id": "1729462568265",
-      "title": "Salchichon",
+      "id": "1729531122660",
+      "title": "Banana",
       "completed": false,
-      "listId": "1729177783808"
+      "listId": "1729462559143"
     },
     {
-      "id": "1729462570965",
-      "title": "Oatmeal",
-      "completed": false,
-      "listId": "1729177783808"
-    },
-    {
-      "id": "1729462572798",
-      "title": "Paella",
-      "completed": false,
-      "listId": "1729177783808"
-    },
-    {
-      "id": "1729462587649",
-      "title": "Pushups",
+      "id": "1729531131062",
+      "title": "Push up",
       "completed": false,
       "listId": "1729462580399"
     },
     {
-      "id": "1729462590582",
-      "title": "Squats",
+      "id": "1729531134046",
+      "title": "Squat",
       "completed": false,
       "listId": "1729462580399"
     },
     {
-      "id": "1729462592466",
+      "id": "1729531135213",
       "title": "Run",
       "completed": false,
       "listId": "1729462580399"
     },
     {
-      "id": "1729462593932",
-      "title": "Swim",
-      "completed": false,
-      "listId": "1729462580399"
-    },
-    {
-      "id": "1729462603298",
-      "title": "Keys",
+      "id": "1729531143882",
+      "title": "Wallet ",
       "completed": false,
       "listId": "1729462598499"
     },
     {
-      "id": "1729462605216",
-      "title": "Wallet",
-      "completed": false,
-      "listId": "1729462598499"
-    },
-    {
-      "id": "1729462606731",
+      "id": "1729531146449",
       "title": "Phone",
       "completed": false,
       "listId": "1729462598499"
     },
     {
-      "id": "1729462621216",
-      "title": "Brocoli",
+      "id": "1729531149299",
+      "title": "Keys",
       "completed": false,
-      "listId": "1729462559143"
-    },
-    {
-      "id": "1729462625849",
-      "title": "Salchichon",
-      "completed": false,
-      "listId": "1729462559143"
-    },
-    {
-      "id": "1729462631082",
-      "title": "Potatoes",
-      "completed": false,
-      "listId": "1729462559143"
+      "listId": "1729462598499"
     }
   ]
 }

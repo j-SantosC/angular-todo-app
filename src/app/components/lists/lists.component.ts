@@ -33,18 +33,28 @@ export class ListsComponent implements OnInit {
     this.listService.getLists().subscribe((lists: any) => (this.lists = lists));
   }
 
-  onListClick(id: number) {
+  onListClick(id: string) {
     this.listService.setActiveList(id);
   }
 
   onAddList(listName: string) {
-    this.listService.addList(listName).subscribe(() => this.refreshLists());
+    this.listService.addList(listName).subscribe((list) => {
+      if (list && list.id) {
+        this.listService.setActiveList(list?.id);
+        this.refreshLists();
+      } else {
+        console.log('list id not avaliable');
+      }
+    });
   }
 
   onDelete(list: any) {
     this.listService
       .deleteList(list.id)
       .pipe(switchMap(() => this.listService.getLists()))
-      .subscribe((lists: any) => (this.lists = lists));
+      .subscribe((lists: any) => {
+        this.lists = lists;
+        this.listService.setActiveList(null);
+      });
   }
 }

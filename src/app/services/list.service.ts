@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import { List } from '../models/todo.models';
 
 @Injectable({
@@ -9,14 +9,13 @@ import { List } from '../models/todo.models';
 export class ListService {
   constructor(private http: HttpClient) {}
 
-  //TODO fix
-  private activeListSubject: BehaviorSubject<number | null> =
-    new BehaviorSubject<number | null>(null);
+  private activeListSubject: BehaviorSubject<string | null> =
+    new BehaviorSubject<string | null>(null);
 
-  public activeList$: Observable<number | null> =
+  public activeList$: Observable<string | null> =
     this.activeListSubject.asObservable();
 
-  setActiveList(listId: number | null): void {
+  setActiveList(listId: string | null): void {
     this.activeListSubject.next(listId);
   }
 
@@ -26,17 +25,21 @@ export class ListService {
     return this.http.get<any[]>(this.listsUrl);
   }
 
-  getList(id: number): Observable<List> {
-    return this.http.get<List>(`${this.listsUrl}/${id}`);
+  getList(id?: string | null): Observable<List | null> {
+    if (id) {
+      return this.http.get<List>(`${this.listsUrl}/${id}`);
+    } else {
+      return of(null);
+    }
   }
-
-  addList(listTitle: string) {
-    const list = {
+  addList(listTitle: string): Observable<List> {
+    const list: List = {
       id: new Date().getTime().toString(),
       name: listTitle,
     };
-    return this.http.post(this.listsUrl, list);
+    return this.http.post<List>(this.listsUrl, list);
   }
+
   deleteList(listId: number) {
     return this.http.delete(`${this.listsUrl}/${listId}`);
   }
