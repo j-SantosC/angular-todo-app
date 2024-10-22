@@ -7,6 +7,10 @@
     {
       "id": "1729462580399",
       "name": "Working Out"
+    },
+    {
+      "id": "1729539877703",
+      "name": "dont forget"
     }
   ],
   "todos": [
@@ -55,12 +59,6 @@
     {
       "id": "1729531112926",
       "title": "lentejas",
-      "completed": true,
-      "listId": "1729462559143"
-    },
-    {
-      "id": "1729531122660",
-      "title": "Banana",
       "completed": false,
       "listId": "1729462559143"
     },
@@ -99,6 +97,24 @@
       "title": "Keys",
       "completed": false,
       "listId": "1729462598499"
+    },
+    {
+      "id": "1729539882553",
+      "title": "keys",
+      "completed": false,
+      "listId": "1729539877703"
+    },
+    {
+      "id": "1729539885153",
+      "title": "wallet",
+      "completed": false,
+      "listId": "1729539877703"
+    },
+    {
+      "id": "1729539887254",
+      "title": "phone",
+      "completed": false,
+      "listId": "1729539877703"
     }
   ]
 }

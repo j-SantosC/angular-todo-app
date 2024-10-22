@@ -24,38 +24,4 @@ import { NgIf } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  title = 'angular-todo-app';
-
-  todos: Todo[] = [];
-  activeList: List | null = null;
-
-  constructor(
-    private todoService: TodoService,
-    private listService: ListService
-  ) {}
-  ngOnInit(): void {
-    this.listService.activeList$
-      .pipe(
-        switchMap((listId: string | null) => {
-          if (listId) {
-            return this.listService.getList(listId);
-          } else {
-            return of(null);
-          }
-        })
-      )
-      .subscribe((list) => {
-        this.activeList = list;
-      });
-  }
-
-  onAddTodo(todoTitle: string) {
-    this.todoService
-      .addTodo(todoTitle, this.activeList!.id)
-      .pipe(switchMap(() => this.todoService.getTodos(this.activeList!.id)))
-      .subscribe((todos) => {
-        this.todos = todos;
-      });
-  }
-}
+export class AppComponent {}

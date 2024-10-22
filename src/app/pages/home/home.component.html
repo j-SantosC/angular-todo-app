@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="main-wrapper">
+    <div class="user">Hola {{ user?.email }}</div>
+    <app-lists></app-lists>
+    <div class="todos-wrapper">
+      <app-todo-list *ngIf="activeList" [todos]="todos"></app-todo-list>
+      <app-todo-input
+        *ngIf="activeList"
+        (itemAdded)="onAddTodo($event)"
+      ></app-todo-input>
+    </div>
+  </div>
+</div>

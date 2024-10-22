@@ -1,13 +1,4 @@
-<div class="container">
+<div class="app-container">
   <app-header />
-  <div class="main-wrapper">
-    <app-lists></app-lists>
-    <div class="todos-wrapper">
-      <app-todo-list *ngIf="activeList" [todos]="todos"></app-todo-list>
-      <app-todo-input
-        *ngIf="activeList"
-        (itemAdded)="onAddTodo($event)"
-      ></app-todo-input>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>

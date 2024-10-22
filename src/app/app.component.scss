@@ -1,24 +1,10 @@
 @import "./styles/colors.scss";
 
-:host {
-  display: flex;
-  justify-content: center;
+.app-container {
   background-color: $background-color;
-}
-
-.container {
-  background-color: $background-color;
-  height: 100vh;
-  padding: 3rem;
-  display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: start;
-  width: 100%;
-  max-width: 1000px;
-
-  .main-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
+  box-sizing: border-box; // Asegura el manejo correcto de padding y borders.
+  display: flex; // Flexbox para facilitar la alineación del contenido
+  padding: 1rem; // Para dar espacio interno y evitar que el contenido toque los bordes
 }
